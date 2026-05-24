@@ -1,10 +1,10 @@
-export default function Footer () {
-    
-    return(
-        <footer className="bg-black text-white p-4 text-center">
-            <p>
-                © 2026 World Explorer
-            </p>
-        </footer>
-    )
+export default function Footer() {
+  return (
+    <footer className="bg-black text-white text-center py-6 mt-10">
+      <p>
+        © {new Date().getFullYear()} World Explorer.
+        All rights reserved.
+      </p>
+    </footer>
+  );
 }
