@@ -2,16 +2,22 @@ import "./globals.css";
 import Navbar from "@/component/Navbar";
 import Footer from "@/component/Footer";
 
-export const detameta = {
+export const metadata = {
   title: "World Explorer",
-  description: "A Next.js country explorer project",
+  description: "Explore countries around the world",
 };
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-gray-100 text-black">
+      <body className="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+        
         <Navbar />
-        <main className="min-h-screen p-6">{children}</main>
+
+        <main className="flex-grow max-w-7xl mx-auto w-full px-6 py-10">
+          {children}
+        </main>
+
         <Footer />
       </body>
     </html>
