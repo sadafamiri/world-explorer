@@ -1,3 +1,4 @@
+// This page fetches fresh data every time.
 import Link from "next/link";
 
 export default async function CountryDetailsPage({ params }) {
