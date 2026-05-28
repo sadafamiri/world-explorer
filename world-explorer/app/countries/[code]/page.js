@@ -1,4 +1,4 @@
-// This page fetches fresh data every time.
+import Link from "next/link";
 
 export default async function CountryDetailsPage({ params }) {
 
@@ -51,6 +51,12 @@ export default async function CountryDetailsPage({ params }) {
           <span className="font-semibold">Population:</span>{" "}
           {country.population?.toLocaleString()}
         </p>
+        <Link
+          href="/countries"
+          className="inline-block bg-black text-white px-8 py-4 rounded-xl hover:bg-gray-800 transition"
+        >
+          Explore Countries
+        </Link>
       </div>
     </div>
   );
