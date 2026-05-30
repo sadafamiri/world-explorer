@@ -2,15 +2,11 @@
 import Link from "next/link";
 
 export default async function CountryDetailsPage({ params }) {
-
   const { code } = await params;
 
-  const res = await fetch(
-    `https://restcountries.com/v3.1/alpha/${code}`,
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch(`https://restcountries.com/v3.1/alpha/${code}`, {
+    cache: "no-store",
+  });
 
   const data = await res.json();
 
@@ -28,24 +24,19 @@ export default async function CountryDetailsPage({ params }) {
         className="w-full h-64 object-cover rounded-xl"
       />
 
-      <h1 className="text-4xl font-bold mt-6 mb-4">
-        {country.name?.common}
-      </h1>
+      <h1 className="text-4xl font-bold mt-6 mb-4">{country.name?.common}</h1>
 
       <div className="space-y-3 text-lg">
         <p>
-          <span className="font-semibold">Capital:</span>{" "}
-          {country.capital?.[0]}
+          <span className="font-semibold">Capital:</span> {country.capital?.[0]}
         </p>
 
         <p>
-          <span className="font-semibold">Region:</span>{" "}
-          {country.region}
+          <span className="font-semibold">Region:</span> {country.region}
         </p>
 
         <p>
-          <span className="font-semibold">Subregion:</span>{" "}
-          {country.subregion}
+          <span className="font-semibold">Subregion:</span> {country.subregion}
         </p>
 
         <p>
@@ -56,7 +47,7 @@ export default async function CountryDetailsPage({ params }) {
           href="/countries"
           className="inline-block bg-black text-white px-8 py-4 rounded-xl hover:bg-gray-800 transition"
         >
-          Explore Countries
+          Back to Home
         </Link>
       </div>
     </div>
